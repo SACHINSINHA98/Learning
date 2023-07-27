@@ -1,0 +1,32 @@
+package SubsequenceAndSubsets;
+
+public class FindingMaxInEverySubsequence {
+public static void main(String[] args) {
+	int []arr= {3,1,-4};
+	findingSumMax(arr);
+}
+
+private static void findingSumMax(int[] arr) {
+	int max=Integer.MIN_VALUE;
+	int sum=0;
+	for(int i=1;i<(1<<arr.length);i++) {
+		int num=0;
+		
+		for(int j=0;j<arr.length;j++) {
+			if(checkBit(i,j)==true){
+				num=arr[j];
+				max=Integer.max(max, num);
+			}
+		}
+		sum=sum+max;
+	}
+	System.out.println(sum);
+}
+
+private static boolean checkBit(int i, int j) {
+	if(((i>>j)& 1)==1) {
+		return true;
+	}
+	return false;
+}
+}

@@ -1,0 +1,32 @@
+package HashMapPractice;
+
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.HashSet;
+import java.util.List;
+
+public class DistinctElementInEveryWindowOfSizeK {
+	public static void main(String[] args) {
+		Integer[]arr= {6,3,7,3,8,6,9};
+		int k=3;
+		List<Integer> list= Arrays.asList(arr);
+		distinctList(list,k);
+		System.out.println("-----------------------------------------------");
+	}
+//bruteForceApproach
+	private static void distinctList(List<Integer> list,int k) {
+		HashSet<Integer>set= new HashSet<>();
+		List<Integer>list1= new ArrayList<>();
+		for(int i=0;i<list.size()-(k-1);i++) {
+			for(int j=i;j<i+k;j++) {
+				System.out.println(j+" "+ (i+k));
+				set.add(list.get(j));
+			}
+			list1.add(set.size());
+			set.clear();
+		}
+		System.out.println(list1);
+	}
+	
+
+}

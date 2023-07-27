@@ -1,0 +1,14 @@
+package HashMapPractice;
+
+import java.util.Arrays;
+
+public class CountEachElements {
+public static void main(String[] args) {
+	int []arr= {2,2,2,2,3,3,3,3,4,4,4};
+	int []arr1=new int[10];
+	for(int i=0;i<arr.length;i++) {
+		arr1[arr[i]]++;
+	}
+	System.out.println(Arrays.toString(arr1));
+}
+}

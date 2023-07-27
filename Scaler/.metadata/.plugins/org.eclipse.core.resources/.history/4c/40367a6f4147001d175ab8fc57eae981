@@ -1,0 +1,26 @@
+package PrefixSum;
+
+import java.util.Arrays;
+
+public class RainWaterTrapped {
+public static void main(String[] args) {
+	int []arr= {2,1,3,2,1,2,4,3,2,1,3,1};
+	
+}
+
+private static void suffixmax(int[]arr) {
+	
+	
+}
+
+private static void prefixmax(int[]arr) {
+	int max=0;
+	int []pf = {0};
+	
+	for(int i=1;i<arr.length-1;i++) {
+		max=Math.max(max, arr[i-1]);
+		pf[i]=max;
+	}
+	System.out.println(Arrays.toString(pf));
+}
+}

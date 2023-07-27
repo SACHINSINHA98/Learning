@@ -1,0 +1,13 @@
+package SubsequenceAndSubsets;
+
+public class FindingMaxInEverySubsequence {
+public static void main(String[] args) {
+	int []arr= {5,9,3,2,9,10,-3,2,6,7};
+	findingSumMax(arr);
+}
+
+private static void findingSumMax(int[] arr) {
+	// TODO Auto-generated method stub
+	
+}
+}

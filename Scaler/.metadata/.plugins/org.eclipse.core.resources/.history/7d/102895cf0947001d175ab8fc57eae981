@@ -1,0 +1,39 @@
+package PrefixSum;
+
+public class MinSwaps {
+public static void main(String[] args) {
+	int []arr= {10,4,8,7,3,8,-1,8,8};
+	System.out.println(swaps(arr));
+}
+
+private static int swaps(int[] arr) {
+	int swap=0;
+	int count=0;
+	for(int i=0;i<arr.length;i++) {
+		if(arr[i]==8) {
+			count++;
+		}
+	}
+	int valinfirstwindow=0;
+	int start=0;
+	int end=count-1;
+	for(int j=start;j<=end;j++) {
+		if(arr[j]!=8) {
+			swap++;
+		}
+	}
+	start++;
+	end++;
+	for(int k=1;k<arr.length-(count-1);k++) {
+		if(arr[start-1]==8) {
+			valinfirstwindow--;
+		}
+		if(arr[end]==8) {
+			valinfirstwindow++;
+		}
+		swap=count-valinfirstwindow;
+	}
+	
+	return swap;
+}
+}

@@ -1,0 +1,32 @@
+package Session1;
+
+public class Replace0 {
+	public static void main(String[] args) {
+		int []arr= {1,1,1,1,1,0,1,1,1,1,1,1};
+		countMax(arr);
+	}
+
+	private static void countMax(int[] arr) {
+		int ans=1;
+		for (int i=0;i<arr.length;i++) {
+			int left=0;
+			int right=0;
+			 
+			if(arr[i]==0) {
+				for(int k=i-1;k>0;k++) {
+					if(arr[i]!=0) {
+					left++;
+				}
+					}
+				for(int m=i+1; m<arr.length;m++) {
+					if(arr[i]!=0) {
+					right++;
+				}}
+				ans=Integer.max(ans,left+right+1);
+				
+			}
+		}
+		System.out.println(ans);
+	}
+
+}
